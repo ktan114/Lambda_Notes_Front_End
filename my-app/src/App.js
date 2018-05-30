@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
+import axios from 'axios'
 
 import './App.css';
 import { NotesDisplay } from './components/NotesDisplay/NotesDisplay';
@@ -17,10 +18,16 @@ class App extends Component {
   }
   
   componentDidMount() {
-    const note = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut deserunt consequuntur autem, deleniti perspiciatis placeat commodi inventore ducimus'];
-
-    this.setState ({ note });
-}
+    axios
+    .get(`http://localhost:3001/api/notes`)
+    .then(res => {
+      console.log(res)
+      this.setState({ note: res.data.notes })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   render() {
     return (
