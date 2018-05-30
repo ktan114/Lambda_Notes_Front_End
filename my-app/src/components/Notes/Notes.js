@@ -25,7 +25,7 @@ export const Notes = props => {
                     <h1> Note Name </h1>
                     <div className='Note-text'>
                         {props.note.map(note => {
-                            return [<p> {note} </p>]
+                            return <p> {note.title} </p>
                         })}
                     </div>
                 </div>
