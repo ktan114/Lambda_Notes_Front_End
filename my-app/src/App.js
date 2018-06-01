@@ -3,9 +3,9 @@ import { Route } from 'react-router';
 import axios from 'axios'
 
 import './App.css';
-import { NotesDisplay } from './components/NotesDisplay/NotesDisplay';
-import NewNote from './components/NewNote/NewNote';
-import { Notes } from './components/Notes/Notes';
+import { ListView } from './components/ListView/ListView';
+import { NoteView } from './components/NoteView/NoteView';
+import CreateNote from './components/CreateNote/CreateNote';
 import Edit from './components/Edit/Edit';  
 import Delete from './components/Delete/Delete';  
 
@@ -14,7 +14,6 @@ class App extends Component {
     super(props);
     this.state = {
       note: [],
-
     }
   }
   
@@ -33,11 +32,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route exact path = '/' render={(props) => (<NotesDisplay {...props} note={this.state.note} /> )}/>
+        <Route exact path = '/' render={(props) => (<ListView {...props} note={this.state.note} /> )}/>
 
-        <Route path = '/newNote' component={ NewNote } />
-          
-        <Route path = '/noteView/:id' render={(props) => (<Notes {...props} note={this.state.note} /> )}/>
+        <Route path = '/noteview/:id' render={(props) => (<NoteView {...props} note={this.state.note} /> )}/>
+
+        <Route path = '/createnote' component= { CreateNote } />
 
         <Route path = '/edit/:id' component= { Edit } />
 
