@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 import './NoteView.css';
 
 export const NoteView = (props) => {
@@ -9,7 +8,7 @@ export const NoteView = (props) => {
     const id = props.match.params.id;
     const note = props.note.filter(el => el._id === id)[0];  
     
-    return  (
+    return (
         <div className="Note">
             <div className='Note-feature'> 
                 <h1> Lambda Notes </h1>
@@ -20,6 +19,7 @@ export const NoteView = (props) => {
                     <Link to= '/createnote'> +Create New Note </Link>
                 </button>
             </div>
+
             <div className='Note-holder'>
                 <div className='Note-links'>
                     <Link to= {`/edit/${id}`}> edit </Link>
