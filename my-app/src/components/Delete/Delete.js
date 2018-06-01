@@ -32,7 +32,7 @@ class Delete extends Component {
     render() {
       return (
         <div>
-          <button className= 'Delete-Button' onClick={() => this.openModal()}>delete</button>
+          <button className= 'Delete-Button' onClick={() => this.openModal()}> Click This To Delete </button>
           <Modal 
             isOpen={this.state.isModalOpen} 
             onClose={() => this.closeModal()}
