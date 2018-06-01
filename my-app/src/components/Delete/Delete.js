@@ -22,12 +22,12 @@ class Delete extends Component {
     }
 
     openModal() {
-        this.setState({ isModalOpen: true })
-      }
-    
-      closeModal() {
-        this.setState({ isModalOpen: false })
-      }
+      this.setState({ isModalOpen: true })
+    }
+  
+    closeModal() {
+      this.setState({ isModalOpen: false })
+    }
   
     render() {
       return (

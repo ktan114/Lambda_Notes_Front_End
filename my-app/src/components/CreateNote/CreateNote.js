@@ -31,7 +31,7 @@ class NewNote extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className="Note">
                 <div className='Note-feature'> 
                     <h1> Lambda Notes </h1>
@@ -42,6 +42,7 @@ class NewNote extends Component {
                         <Link to= '/createnote'> +Create New Note </Link>
                     </button>
                 </div>
+
                 <div className='Note-content'>
                     <h1> Create New Note: </h1>
                     <div className='Note-create'>

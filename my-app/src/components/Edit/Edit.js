@@ -27,8 +27,6 @@ class Edit extends Component {
         })
     }
 
-
-
     render() {
         return (
             <div className="Note">
@@ -41,6 +39,7 @@ class Edit extends Component {
                     <Link to= '/createnote'> +Create New Note </Link>
                 </button>
             </div>
+            
             <div className='Note-content'>
                 <h1> Edit Note: </h1>
                 <div className='Note-create'>
