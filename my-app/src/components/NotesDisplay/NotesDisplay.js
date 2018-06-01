@@ -4,6 +4,7 @@ import './NotesDisplay.css';
 import { Link } from 'react-router-dom';
 
 export const NotesDisplay = (props) => {
+
     return (
         <div className="Note">
             <div className= 'Note-feature'> 
@@ -18,9 +19,9 @@ export const NotesDisplay = (props) => {
             <div className='Note-content'>
                 <h1> Your Notes: </h1> 
                 <div className= 'Note-notesDisplay'>
-                        {props.note.map((note, index) => {
+                        {props.note.map((note,index) => {
                             return <div key={index} className = 'Note-notes'> 
-                               <Link to = '/noteView' >
+                               <Link to = { `/noteView/${note._id}`} >
                                 <h3> {note.title} </h3>
                                 <p> {note.body} </p>
                                 </Link>

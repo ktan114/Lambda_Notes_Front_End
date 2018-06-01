@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Edit extends Component {
+    constructor() {
+        super();
+        this.state = {
+            title: '',
+            body: '',
+        }
+    }
+
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
+    handleSubmit = (e) => {
+        const updatedObj = { title: this.state.title, body: this.state.body }
+        axios
+        .put(`https://glacial-bayou-87205.herokuapp.com/api/notes/${this.props.match.params.id}`, updatedObj)
+        .then(note => {
+            console.log('hello', note)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+
+
     render() {
         return (
             <div className="Note">
@@ -21,16 +48,20 @@ class Edit extends Component {
                             className='Note-title'
                             type='text'
                             placeholder='Note Title'
-                            name='Note Title'
+                            name='title'
+                            value = {this.state.title}
+                            onChange = {this.handleChange}
                         />
                         <textarea
                             className='Note-contented'
                             type='text'
                             placeholder='Note Content'
-                            name='Note Content'
+                            name='body'
+                            value = {this.state.body}
+                            onChange = {this.handleChange}
                         />
                     </div>
-                <button className= 'Note-button'> Update </button>
+                <button onClick = {this.handleSubmit} className= 'Note-button'> Update </button>
             </div>
         </div>
         )
