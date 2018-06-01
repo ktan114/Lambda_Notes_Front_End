@@ -7,6 +7,7 @@ import { NotesDisplay } from './components/NotesDisplay/NotesDisplay';
 import NewNote from './components/NewNote/NewNote';
 import { Notes } from './components/Notes/Notes';
 import Edit from './components/Edit/Edit';  
+import Delete from './components/Delete/Delete';  
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +40,8 @@ class App extends Component {
         <Route path = '/noteView/:id' render={(props) => (<Notes {...props} note={this.state.note} /> )}/>
 
         <Route path = '/edit/:id' component= { Edit } />
+
+        <Route path = '/delete/:id' component = { Delete }  />
       </div>
     );
   }
