@@ -18,8 +18,8 @@ export const NotesDisplay = (props) => {
             <div className='Note-content'>
                 <h1> Your Notes: </h1> 
                 <div className= 'Note-notesDisplay'>
-                        {props.note.map(note => {
-                            return <div className = 'Note-notes'> 
+                        {props.note.map((note, index) => {
+                            return <div key={index} className = 'Note-notes'> 
                                <Link to = '/noteView' >
                                 <h3> {note.title} </h3>
                                 <p> {note.body} </p>
