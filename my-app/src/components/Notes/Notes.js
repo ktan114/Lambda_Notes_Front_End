@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Delete from '../Delete/Delete';
+
 import './Notes.css';
 
 export const Notes = (props) => {
 
     const id = props.match.params.id;
-    const note = props.note.filter(el => el._id === id)[0];
-
-    console.log("line 12", props)
+    const note = props.note.filter(el => el._id === id)[0];  
     
     return  (
         <div className="Note">
@@ -25,15 +23,13 @@ export const Notes = (props) => {
             <div className='Note-holder'>
                 <div className='Note-links'>
                     <Link to= {`/edit/${id}`}> edit </Link>
-                    <Delete />
+                    <Link to = {`/delete/${id}`}> delete </Link>
                 </div>
                 <div className='Note-body'>
                     <h1> Note Name </h1>
                     <div className='Note-text'>
-                    <h3> {note.title} </h3>
-                    <p> {note.body} </p>
-          
-                         
+                        <h3> {note.title} </h3>
+                        <p> {note.body} </p>         
                     </div>
                 </div>
             </div>
