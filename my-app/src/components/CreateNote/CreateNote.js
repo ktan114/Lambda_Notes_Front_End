@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
-import './NewNote.css';
+import './CreateNote.css';
 
 class NewNote extends Component {
     constructor() {
@@ -39,7 +39,7 @@ class NewNote extends Component {
                         <Link to= '/'> View Your Notes </Link>
                     </button>
                     <button className ='Note-buttons'>
-                        <Link to= '/newNote'> +Create New Note </Link>
+                        <Link to= '/createnote'> +Create New Note </Link>
                     </button>
                 </div>
                 <div className='Note-content'>

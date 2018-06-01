@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-import './Notes.css';
+import './NoteView.css';
 
-export const Notes = (props) => {
+export const NoteView = (props) => {
 
     const id = props.match.params.id;
     const note = props.note.filter(el => el._id === id)[0];  
@@ -17,7 +17,7 @@ export const Notes = (props) => {
                     <Link to= '/'> View Your Notes </Link>
                 </button>
                 <button className ='Note-buttons'>
-                    <Link to= '/newNote'> +Create New Note </Link>
+                    <Link to= '/createnote'> +Create New Note </Link>
                 </button>
             </div>
             <div className='Note-holder'>

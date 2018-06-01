@@ -1,9 +1,9 @@
 import React from 'react';
-import './NotesDisplay.css';
+import './ListView.css';
 
 import { Link } from 'react-router-dom';
 
-export const NotesDisplay = (props) => {
+export const ListView = (props) => {
 
     return (
         <div className="Note">
@@ -13,7 +13,7 @@ export const NotesDisplay = (props) => {
                     <Link to= '/'> View Your Notes </Link>
                 </button>
                 <button className ='Note-buttons'>
-                    <Link to= '/newNote'> +Create New Note </Link>
+                    <Link to= '/createnote'> +Create New Note </Link>
                 </button>
             </div>
             <div className='Note-content'>
