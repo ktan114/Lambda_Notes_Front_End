@@ -22,7 +22,6 @@ class App extends Component {
     .get(`https://glacial-bayou-87205.herokuapp.com/api/notes`)
     .then(res => {
       this.setState({ note: res.data.notes })
-
     })
     .catch(err => {
       console.log(err)
@@ -32,14 +31,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route exact path = '/' render={(props) => (<ListView {...props} note={this.state.note} /> )}/>
-
-        <Route path = '/noteview/:id' render={(props) => (<NoteView {...props} note={this.state.note} /> )}/>
-
+        <Route exact path = '/' render={(props) => (<ListView {...props} note={this.state.note} /> )} />
+        <Route path = '/noteview/:id' render={(props) => (<NoteView {...props} note={this.state.note} /> )} />
         <Route path = '/createnote' component= { CreateNote } />
-
         <Route path = '/edit/:id' component= { Edit } />
-
         <Route path = '/delete/:id' component = { Delete }  />
       </div>
     );
