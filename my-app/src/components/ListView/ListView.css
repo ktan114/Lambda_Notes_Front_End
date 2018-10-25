@@ -1,40 +1,36 @@
 .Note {
-    display: flex;
-    flex-flow: row;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    border: 2px black solid;
-    min-height: 100vh;
-  }
-  
-  .Note-content {
-    width: 70%;
-    padding: 0 0 0 20px;
-    background: rgb(245, 244, 244);
-    padding-top: 84px;
-  }
-  
-  .Note-notesDisplay {
-    display: flex;
-    flex-flow: row wrap;
-    padding-bottom: 80px;
-    margin-top: 45px;
-  }
-  
-  .Note-notes {
-    width: 30%;
-    font-size: 15px;
-    border: 2px solid black;
-    padding: 10px 20px;
-    margin: 8px 10px;
-    background: white;
-  }
-  
-  h3 {
-    width: 100%;
-    border-bottom: 1px grey solid;
-    padding-bottom: 10px;
-    margin-top: 0px;
-  }
+  display: flex;
+  min-height: 100vh;
+  margin: 0 auto;
+  border: 2px black solid;
+}
 
+.Note-content {
+  width: 70%;
+  padding: 0 0 0 20px;
+  background: rgb(245, 244, 244);
+  padding-top: 84px;
+}
+
+.Note-notesDisplay {
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 80px;
+  margin-top: 45px;
+}
+
+.Note-notes {
+  width: 30%;
+  font-size: 15px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  margin: 8px 10px;
+  background: white;
+}
+
+h3 {
+  width: 100%;
+  border-bottom: 1px grey solid;
+  padding-bottom: 10px;
+  margin-top: 0px;
+}
