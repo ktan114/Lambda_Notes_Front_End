@@ -49,7 +49,7 @@ class NewNote extends Component {
             <textarea
               className="Create-content"
               type="text"
-              placeholder="Type your notes"
+              placeholder="Type your note"
               name="body"
               value={this.state.body}
               onChange={this.handleChange}
@@ -62,10 +62,11 @@ class NewNote extends Component {
               value={this.state.createdBy}
               onChange={this.handleChange}
             /> */}
-          <button onClick={this.handleSubmit} className="Note-button">
-            {" "}
-            Save{" "}
-          </button>
+            <Link to="/">
+              <button onClick={this.handleSubmit} className="Note-button">
+                Save
+              </button>
+            </Link>
           </div>
         </div>
       </div>
