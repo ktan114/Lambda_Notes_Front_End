@@ -1,7 +1,3 @@
-.List {
-  width: 65%;
-  background: rgb(245, 244, 244);
-}
 .List__notes {
   display: flex;
   flex-flow: row wrap;

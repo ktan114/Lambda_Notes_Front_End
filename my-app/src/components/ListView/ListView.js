@@ -8,7 +8,7 @@ const ListView = props => {
   return (
     <div className="Note">
       <Sidebar />
-      <div className="List">
+      <div className="Note__Page">
         <h1 className="Note__title"> Your Notes: </h1>
         <div className="List__notes">
           {props.note.map((note, index) => {
