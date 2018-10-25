@@ -1,28 +1,23 @@
-.Note-create {
-    display: flex;
-    flex-flow: column;
-    width: 80%;
-    margin-top: 52px;
+.Create {
+  margin: 18px 0 18px 6%;
 }
-
-.Note-title {
-    width: 70%;
-    margin-bottom: 10px;
-    height: 50px;
+.Create__title {
+  width: 70%;
+  margin: 10px auto;
+  height: 35px;
+  padding-left: 5%;
+  font-size: 1.5rem;
 }
-
-.Note-contented { 
-    padding: 0 5px 350px;
-    width: 750px;
-    border-style: inset;
-    border-width: 2px;
-}  
-
+.Create-content {
+  width: 90%;
+  height: 250px;
+  padding: 10px 5%;
+  font-size: 1.5rem;
+}
 .Note-button {
-    background: rgb(16, 183, 189);
-    color: white;
-    margin-top: 10px;
-    width: 200px;
-    height: 50px;
+  background: rgb(16, 183, 189);
+  color: white;
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
 }
-

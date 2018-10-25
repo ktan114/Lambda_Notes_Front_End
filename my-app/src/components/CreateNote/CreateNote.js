@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./CreateNote.css";
+import Sidebar from "../subcomponents/Sidebar/Sidebar";
 
 class NewNote extends Component {
   constructor() {
     super();
     this.state = {
       title: "",
-      body: "",
+      body: ""
       // createdBy: ""
     };
   }
@@ -33,31 +34,22 @@ class NewNote extends Component {
   render() {
     return (
       <div className="Note">
-        <div className="Note-feature">
-          <h1> Lambda Notes </h1>
-          <button className="Note-buttons">
-            <Link to="/"> View Your Notes </Link>
-          </button>
-          <button className="Note-buttons">
-            <Link to="/createnote"> +Create New Note </Link>
-          </button>
-        </div>
-
-        <div className="Note-content">
-          <h1> Create New Note: </h1>
-          <div className="Note-create">
+        <Sidebar />
+        <div className="Note__Page">
+          <h1 className="Note__title"> Create New Note: </h1>
+          <div className="Create">
             <input
-              className="Note-title"
+              className="Create__title"
               type="text"
-              placeholder="Note Title"
+              placeholder="Title"
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
             />
             <textarea
-              className="Note-contented"
+              className="Create-content"
               type="text"
-              placeholder="Note Content"
+              placeholder="Type your notes"
               name="body"
               value={this.state.body}
               onChange={this.handleChange}
@@ -70,11 +62,11 @@ class NewNote extends Component {
               value={this.state.createdBy}
               onChange={this.handleChange}
             /> */}
-          </div>
           <button onClick={this.handleSubmit} className="Note-button">
             {" "}
             Save{" "}
           </button>
+          </div>
         </div>
       </div>
     );
