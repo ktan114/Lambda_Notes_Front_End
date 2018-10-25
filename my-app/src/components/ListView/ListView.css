@@ -13,6 +13,7 @@
   border: 2px solid black;
   padding: 10px 5% 10px 5%;
   margin-top: 10px;
+  overflow-wrap: break-word;
 }
 .List__note__h3 {
   margin: 0 auto;
@@ -20,4 +21,7 @@
   border-bottom: 1px grey solid;
   padding-bottom: 5px;
   font-size: 2rem;
+}
+.List__note__p {
+  font-size: 1.3rem;
 }
