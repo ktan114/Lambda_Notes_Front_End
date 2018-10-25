@@ -4,19 +4,19 @@ import { Link } from "react-router-dom";
 import "./ListView.css";
 import Sidebar from "../subcomponents/Sidebar/Sidebar";
 
-export const ListView = props => {
+const ListView = props => {
   return (
     <div className="Note">
       <Sidebar />
-      <div className="Note-content">
-        <h1> Your Notes: </h1>
-        <div className="Note-notesDisplay">
+      <div className="List">
+        <h1 className="Note__title"> Your Notes: </h1>
+        <div className="List__notes">
           {props.note.map((note, index) => {
             return (
-              <div key={index} className="Note-notes">
+              <div key={index} className="List__note">
                 <Link to={`/noteView/${note._id}`}>
-                  <h3> {note.title} </h3>
-                  <p> {note.body} </p>
+                  <h3 className="List__note__h3"> {note.title} </h3>
+                  <p className="List__note__p"> {note.body} </p>
                 </Link>
               </div>
             );
@@ -26,3 +26,5 @@ export const ListView = props => {
     </div>
   );
 };
+
+export default ListView;
