@@ -7,6 +7,10 @@
   margin: 0 auto;
   border: 2px black solid;
 }
+.Note__Page {
+  width: 65%;
+  background: rgb(245, 244, 244);
+}
 .Note__title {
   margin: 51px 0 0 6%;
   font-size: 2rem;
