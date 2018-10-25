@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./sidebar.css";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <div className="Note-feature">
-      <h1> Lambda Notes </h1>
-      <button className="Note-buttons">
-        <Link to="/"> View Your Notes </Link>
+    <div className="Sidebar">
+      <h1 className="Sidebar__h1"> Lambda Notes </h1>
+      <button className="Sidebar__buttons">
+        <Link className="Sidebar__links" to="/"> View Your Notes </Link>
       </button>
-      <button className="Note-buttons">
-        <Link to="/createnote"> +Create New Note </Link>
+      <button className="Sidebar__buttons">
+        <Link className="Sidebar__links" to="/createnote"> + Create New Note </Link>
       </button>
     </div>
   );

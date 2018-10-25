@@ -1,15 +1,24 @@
-.Note-feature {
-  width: 30%;
-  padding-left: 20px;
+.Sidebar {
   background: rgb(209, 204, 204);
-  font-size: 25px;
+  padding-left: 3%;
+  width: 35%;
 }
-.Note-buttons {
+.Sidebar__h1 {
+  margin: 0 auto;
+  padding: 0 auto;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+.Sidebar__buttons {
+  border: 1px solid darkgrey;
+  background: rgb(16, 183, 189);
   text-align: center;
   width: 90%;
-  border: 2px solid black;
-  background: rgb(16, 183, 189);
-  height: 60px;
-  font-size: 25px;
-  margin-top: 15px;
+  padding: 10px 5% 10px 5%;
+  margin-top: 25px;
+}
+.Sidebar__links {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
