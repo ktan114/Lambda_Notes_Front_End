@@ -12,7 +12,7 @@ class Delete extends Component {
 
     handleSubmit = (e) => {
       axios
-      .delete(`https://glacial-bayou-87205.herokuapp.com/api/note/${this.props.match.params.id}`)
+      .delete(`https://ktan-notes.herokuapp.com/notes/${this.props.match.params.id}`)
       .then(deleted => {
         console.log(deleted)
       })

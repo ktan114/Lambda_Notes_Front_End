@@ -18,7 +18,7 @@ class Edit extends Component {
     handleSubmit = (e) => {
         const updatedObj = { title: this.state.title, body: this.state.body }
         axios
-        .put(`https://glacial-bayou-87205.herokuapp.com/api/note/${this.props.match.params.id}`, updatedObj)
+        .put(`https://ktan-notes.herokuapp.com/notes/${this.props.match.params.id}`, updatedObj)
         .then(note => {
             console.log(note)
         })

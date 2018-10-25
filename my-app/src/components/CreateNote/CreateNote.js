@@ -10,7 +10,7 @@ class NewNote extends Component {
     this.state = {
       title: "",
       body: "",
-      createdBy: ""
+      // createdBy: ""
     };
   }
 
@@ -21,7 +21,7 @@ class NewNote extends Component {
   handleSubmit = () => {
     const updatedObj = this.state;
     axios
-      .post(`https://glacial-bayou-87205.herokuapp.com/api/notes`, updatedObj)
+      .post(`https://ktan-notes.herokuapp.com/notes`, updatedObj)
       .then(res => {
         console.log(res);
       })
@@ -62,14 +62,14 @@ class NewNote extends Component {
               value={this.state.body}
               onChange={this.handleChange}
             />
-            <input
+            {/* <input
               className="Note-title"
               type="text"
               placeholder="Note Created By"
               name="createdBy"
               value={this.state.createdBy}
               onChange={this.handleChange}
-            />
+            /> */}
           </div>
           <button onClick={this.handleSubmit} className="Note-button">
             {" "}

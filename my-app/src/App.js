@@ -19,8 +19,9 @@ class App extends Component {
   
   componentDidMount() {
     axios
-    .get(`https://glacial-bayou-87205.herokuapp.com/api/notes`)
+    .get(`https://ktan-notes.herokuapp.com/notes`)
     .then(res => {
+      console.log("GET notes", res.data)
       this.setState({ note: res.data.notes })
     })
     .catch(err => {
