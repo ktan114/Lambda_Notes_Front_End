@@ -3,6 +3,11 @@
   flex-flow: row wrap;
   margin: 18px 0 18px 4%;
 }
+.List__note__link {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
 .List__note {
   background: white;
   width: 95%;

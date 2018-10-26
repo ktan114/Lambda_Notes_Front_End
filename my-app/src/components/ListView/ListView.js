@@ -11,14 +11,14 @@ const ListView = props => {
       <div className="Note__Page">
         <h1 className="Note__title"> Your Notes: </h1>
         <div className="List__notes">
-          {props.notes.map((note, index) => {
+          {props.notes.map(note => {
             return (
-              <div key={index} className="List__note">
-                <Link to={`/noteView/${note._id}`}>
+              <Link className="List__note__link" to={`/noteView/${note._id}`}>
+                <div key={note._id} className="List__note">
                   <h3 className="List__note__h3"> {note.title} </h3>
                   <p className="List__note__p"> {note.body} </p>
-                </Link>
-              </div>
+                </div>
+              </Link>
             );
           })}
         </div>
