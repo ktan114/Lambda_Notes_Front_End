@@ -15,3 +15,11 @@
   margin: 48px 0 0 6%;
   font-size: 2.5rem;
 }
+.Note__button {
+  border: 1px solid darkgrey;
+  background: rgb(16, 183, 189);
+  text-align: center;
+  width: 90%;
+  padding: 10px 5% 10px 5%;
+  margin-top: 25px;
+}
