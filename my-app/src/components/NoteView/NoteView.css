@@ -3,12 +3,17 @@
   justify-content: flex-end;
 }
 .NoteView__link {
-  text-decoration: none;
   color: black;
   margin-right: 5%;
   font-size: 2rem;
 }
-.Note-text {
-  margin-top: 45px;
-  font-size: 25px;
+.Note__title--mod {
+  margin: 26px 0 0 0;
+}
+.NoteView__content {
+  margin: 15px 4% 18px 6%;
+  overflow-wrap: break-word;
+}
+.NoteView__p {
+    font-size: 2rem;
 }

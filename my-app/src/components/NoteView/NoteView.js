@@ -37,14 +37,18 @@ class NoteView extends Component {
         <Sidebar />
         <div className="Note__Page">
           <div className="NoteView__links">
-            <Link className="NoteView__link" to={`/edit/${this.state.id}`}> edit </Link>
-            <Link className="NoteView__link" to={`/delete/${this.state.id}`}> delete </Link>
+            <Link className="NoteView__link" to={`/edit/${this.state.id}`}>
+              {" "}
+              edit{" "}
+            </Link>
+            <Link className="NoteView__link" to={`/delete/${this.state.id}`}>
+              {" "}
+              delete{" "}
+            </Link>
           </div>
-          <h1 className="Note__title"> Note Name </h1>
-  
-            <div className="Note-text">
-              <h3> {note.title} </h3>
-              <p> {note.body} </p>
+          <div className="NoteView__content">
+            <h1 className="Note__title Note__title--mod"> {note.title} </h1>
+            <p className="NoteView__p"> {note.body} </p>
           </div>
         </div>
       </div>
