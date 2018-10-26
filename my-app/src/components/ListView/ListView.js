@@ -11,7 +11,7 @@ const ListView = props => {
       <div className="Note__Page">
         <h1 className="Note__title"> Your Notes: </h1>
         <div className="List__notes">
-          {props.note.map((note, index) => {
+          {props.notes.map((note, index) => {
             return (
               <div key={index} className="List__note">
                 <Link to={`/noteView/${note._id}`}>
