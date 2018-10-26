@@ -24,7 +24,6 @@ class NewNote extends Component {
     axios
       .post(`https://ktan-notes.herokuapp.com/notes`, updatedObj)
       .then(res => {
-        console.log(res);
       })
       .catch(err => {
         console.log(err);
@@ -63,7 +62,7 @@ class NewNote extends Component {
               onChange={this.handleChange}
             /> */}
             <Link to="/">
-              <button onClick={this.handleSubmit} className="Note-button">
+              <button onClick={this.handleSubmit} className="Note__button Note__button--mod">
                 Save
               </button>
             </Link>

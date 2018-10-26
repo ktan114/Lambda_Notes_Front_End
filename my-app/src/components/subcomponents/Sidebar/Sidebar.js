@@ -7,11 +7,17 @@ const Sidebar = () => {
   return (
     <div className="Sidebar">
       <h1 className="Sidebar__h1"> Lambda Notes </h1>
-      <button className="Sidebar__buttons">
-        <Link className="Sidebar__links" to="/"> View Your Notes </Link>
+      <button className="Note__button">
+        <Link className="Sidebar__links" to="/">
+          {" "}
+          View Your Notes{" "}
+        </Link>
       </button>
-      <button className="Sidebar__buttons">
-        <Link className="Sidebar__links" to="/createnote"> + Create New Note </Link>
+      <button className="Note__button">
+        <Link className="Sidebar__links" to="/createnote">
+          {" "}
+          + Create New Note{" "}
+        </Link>
       </button>
     </div>
   );
