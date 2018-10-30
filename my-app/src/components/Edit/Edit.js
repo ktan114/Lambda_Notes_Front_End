@@ -22,8 +22,7 @@ class Edit extends Component {
     axios
       .get(`https://ktan-notes.herokuapp.com/notes/${note_id}`)
       .then(res => {
-        const { note } = res.data;
-        this.setState({ title: note.title, body: note.body });
+        this.setState({ title: res.data.title, body: res.data.body });
       })
       .catch(err => {
         console.log(err);

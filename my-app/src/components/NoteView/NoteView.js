@@ -23,7 +23,7 @@ class NoteView extends Component {
     axios
       .get(`https://ktan-notes.herokuapp.com/notes/${note_id}`)
       .then(res => {
-        this.setState({ note: res.data.note });
+        this.setState({ note: res.data });
       })
       .catch(err => {
         console.log(err);

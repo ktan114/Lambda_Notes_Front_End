@@ -25,7 +25,7 @@ class App extends Component {
     axios
       .get(`https://ktan-notes.herokuapp.com/notes`)
       .then(res => {
-        this.setState({ notes: res.data.notes });
+        this.setState({ notes: res.data });
       })
       .catch(err => {
         console.log(err);
