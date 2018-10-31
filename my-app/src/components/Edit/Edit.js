@@ -8,7 +8,7 @@ class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.location.state._id,
+      id: props.match.params.id,
       title: "",
       body: ""
     };
@@ -47,7 +47,7 @@ class Edit extends Component {
   };
 
   render() {
-    console.log("EditView props", this.props)
+    console.log(" Edit props", this.props);
     return (
       <div className="Note">
         <Sidebar />
@@ -82,7 +82,11 @@ class Edit extends Component {
               to={{
                 pathname: `/noteview/${this.state.id}`,
                 state: {
-                  note: { title: this.state.title, body: this.state.body, _id: this.state.id}
+                  note: {
+                    title: this.state.title,
+                    body: this.state.body,
+                    _id: this.state.id
+                  }
                 }
               }}
             >
