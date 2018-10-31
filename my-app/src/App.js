@@ -7,7 +7,6 @@ import ListView from "./components/ListView/ListView";
 import NoteView from "./components/NoteView/NoteView";
 import CreateNote from "./components/CreateNote/CreateNote";
 import Edit from "./components/Edit/Edit";
-import Delete from "./components/Delete/Delete";
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +42,6 @@ class App extends Component {
         <Route path="/noteview/:id" component={NoteView} />
         <Route path="/createnote" component={CreateNote} />
         <Route path="/edit/:id" component={Edit} />
-        <Route path="/delete/:id" component={Delete} />
       </div>
     );
   }
