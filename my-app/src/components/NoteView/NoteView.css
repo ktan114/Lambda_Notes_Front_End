@@ -1,11 +1,19 @@
 .NoteView__links {
   display: flex;
   justify-content: flex-end;
+  margin-top: 5px;
 }
 .NoteView__link {
   color: black;
   margin-right: 5%;
   font-size: 2rem;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+}
+.NoteView__link--marginTop {
+  margin-top: 3px;
 }
 .Note__title--mod {
   margin: 26px 0 0 0;

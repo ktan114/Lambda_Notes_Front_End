@@ -50,7 +50,7 @@ class NoteView extends Component {
         <Sidebar />
         <div className="Note__Page">
           <div className="NoteView__links">
-            <Link className="NoteView__link" to={`/edit/${this.state.id}`}>
+            <Link className="NoteView__link NoteView__link--marginTop" to={`/edit/${this.state.id}`}>
               {" "}
               edit{" "}
             </Link>
