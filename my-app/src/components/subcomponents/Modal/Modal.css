@@ -1,77 +1,45 @@
-/* .Delete-Button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 25px;
-    font-family: sans-serif;
-    padding: 30px;
-    margin-left: 550px;
-    margin-top: 300px;
-    border: 2px black solid;
-}
-
-.Delete-Buttons {
-    display: flex;
-}
-
-.Delete {
-    margin-right: 50px;
-    background: red;
-    color: white;
-    width: 200px;
-    height: 50px;
-}
-
 .Modal {
-    margin-left: 250px;
-    margin-top: 300px;
-    width: 1000px;
-    border: 2px black solid;
-    position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(237, 228, 228, 0.53);
 }
-.Delete-Modal {
-    display: flex;
-    flex-flow: column;
-    border: 2px black solid;
-    align-items: center;
-    background: white;
+.Modal__Layer {
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  border: 2px black solid;
+  align-items: center;
+  background: white;
+  width: 70%;
+  height: 100px;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
-
-.Text {
-    font-weight: normal;
+.Modal__Text {
+  margin-top: 30px;
+  font-weight: normal;
 }
-
-.No-Button {
-    margin-bottom: 20px;
-    background: rgb(16, 183, 189);
-    color: white;
-    width: 200px;
-    height: 50px;
-} */
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-  }
-  
-  .modal-main {
-    position:fixed;
-    background: white;
-    width: 80%;
-    height: auto;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
-  
-  .display-block {
-    display: block;
-  }
-  
-  .display-none {
-    display: none;
-  }
+.Modal__Buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.Modal__Button {
+  background: red;
+  color: white;
+  width: 100px;
+  margin-left: 5%;
+}
+.Modal__Button--blue {
+  background: rgb(16, 183, 189);
+}
+.display-block {
+  display: block;
+}
+.display-none {
+  display: none;
+}

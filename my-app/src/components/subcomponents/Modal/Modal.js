@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Modal.css";
 
 const Modal = ({ handleClose, show, id }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const showHideClassName = show ? "Modal display-block" : "Modal display-none";
 
   const handleDelete = () => {
     axios
@@ -16,12 +16,18 @@ const Modal = ({ handleClose, show, id }) => {
 
   return (
     <div className={showHideClassName}>
-      <section className="modal-main">
-        <h1 className="Text">Are you sure you want to delete this?</h1>
-        <Link to="/">
-          <button onClick={handleDelete}>Delete</button>
-        </Link>
-        <button onClick={handleClose}>No</button>
+      <section className="Modal__Layer">
+        <h1 className="Modal__Text">Are you sure you want to delete this?</h1>
+        <section className="Modal__Buttons">
+          <Link to="/">
+            <button className="Modal__Button" onClick={handleDelete}>
+              Delete
+            </button>
+          </Link>
+          <button className="Modal__Button Modal__Button--blue" onClick={handleClose}>
+            No
+          </button>
+        </section>
       </section>
     </div>
   );
