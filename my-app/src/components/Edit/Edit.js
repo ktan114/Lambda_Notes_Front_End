@@ -8,7 +8,7 @@ class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.match.params.id,
+      id: props.location.state._id,
       title: "",
       body: ""
     };
@@ -37,7 +37,7 @@ class Edit extends Component {
     const updatedObj = { title: this.state.title, body: this.state.body };
     axios
       .put(
-        `https://ktan-notes.herokuapp.com/notes/${this.props.match.params.id}`,
+        `https://ktan-notes.herokuapp.com/notes/${this.state.id}`,
         updatedObj
       )
       .then(() => {})
@@ -47,6 +47,7 @@ class Edit extends Component {
   };
 
   render() {
+    console.log("EditView props", this.props)
     return (
       <div className="Note">
         <Sidebar />
@@ -77,7 +78,14 @@ class Edit extends Component {
             value={this.state.createdBy}
             onChange={this.handleChange}
           /> */}
-            <Link to={`/noteview/${this.state.id}`}>
+            <Link
+              to={{
+                pathname: `/noteview/${this.state.id}`,
+                state: {
+                  note: { title: this.state.title, body: this.state.body, _id: this.state.id}
+                }
+              }}
+            >
               <button
                 onClick={this.handleSubmit}
                 className="Note__button Note__button--mod"

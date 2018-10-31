@@ -13,7 +13,14 @@ const ListView = props => {
         <div className="List__notes">
           {props.notes.map(note => {
             return (
-              <Link key={note._id} className="List__note__link" to={`/noteView/${note._id}`}>
+              <Link
+                key={note._id}
+                className="List__note__link"
+                to={{
+                  pathname: `/noteView/${note._id}`,
+                  state: { note: note }
+                }}
+              >
                 <div className="List__note">
                   <h3 className="List__note__h3"> {note.title} </h3>
                   <p className="List__note__p"> {note.body} </p>
