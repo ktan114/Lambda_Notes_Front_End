@@ -47,7 +47,6 @@ class Edit extends Component {
   };
 
   render() {
-    console.log(" Edit props", this.props);
     return (
       <div className="Note">
         <Sidebar />
