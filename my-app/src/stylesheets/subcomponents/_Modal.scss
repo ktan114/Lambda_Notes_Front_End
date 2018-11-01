@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(237, 228, 228, 0.53);
+  background: $modal-background;
 }
 .Modal__Layer {
   position: fixed;
@@ -35,7 +35,7 @@
   margin-left: 5%;
 }
 .Modal__Button--blue {
-  background: rgb(16, 183, 189);
+  background: $note-button;
 }
 .display-block {
   display: block;
