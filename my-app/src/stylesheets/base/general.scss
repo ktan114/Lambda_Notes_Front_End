@@ -15,7 +15,7 @@ body, html {
 }
 .Note__Page {
   width: 65%;
-  background: rgb(245, 244, 244);
+  background: $page-background;
 }
 .Note__title {
   margin: 48px 0 0 6%;
