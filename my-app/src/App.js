@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route } from "react-router";
 import axios from "axios";
 
-import "./App.css";
 import ListView from "./components/ListView/ListView";
 import NoteView from "./components/NoteView/NoteView";
 import CreateNote from "./components/CreateNote/CreateNote";

@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./Modal.css";
-
 const Modal = ({ handleClose, show, id }) => {
   const showHideClassName = show ? "Modal display-block" : "Modal display-none";
 

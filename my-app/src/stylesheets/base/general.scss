@@ -23,7 +23,7 @@ body, html {
 }
 .Note__button {
   border: 1px solid darkgrey;
-  background: rgb(16, 183, 189);
+  background: $note-button;
   text-align: center;
   width: 90%;
   padding: 10px 5% 10px 5%;

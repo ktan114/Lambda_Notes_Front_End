@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import "./NoteView.css";
-import Sidebar from "../subcomponents/Sidebar/Sidebar";
-import Modal from "../subcomponents/Modal/Modal";
+import Sidebar from "../../subcomponents/Sidebar/Sidebar";
+import Modal from "../../subcomponents/Modal/Modal";
 
 class NoteView extends Component {
   constructor(props) {
