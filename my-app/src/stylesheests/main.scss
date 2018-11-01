@@ -1,0 +1,13 @@
+/* General Styling */
+@import "./base/variables.scss";
+@import "./base/general.scss";
+
+/* Subcomponent Styling */
+@import "./subcomponents/Modal.scss";
+@import "./subcomponents/Sidebar.scss";
+
+/* Component Styling */
+@import "./components/CreateNote.css";
+@import "./components/Edit.css";
+@import "./components/ListView.css";
+@import "./components/NoteView.css";
