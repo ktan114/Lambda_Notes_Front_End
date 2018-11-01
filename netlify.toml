@@ -1,2 +1,3 @@
 [build]
-    base="my-app"
+    base="my-app/"
+    publish="my-app/build"
