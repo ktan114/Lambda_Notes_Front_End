@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Sidebar from "../../subcomponents/Sidebar/Sidebar";
+import Sidebar from "../subcomponents/Sidebar/Sidebar";
 
 const ListView = props => {
   return (

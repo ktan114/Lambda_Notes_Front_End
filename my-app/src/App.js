@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Route } from "react-router";
 import axios from "axios";
 
-import ListView from "./components/ListView/ListView";
-import NoteView from "./components/NoteView/NoteView";
-import CreateNote from "./components/CreateNote/CreateNote";
-import Edit from "./components/Edit/Edit";
+import ListView from "./components/ListView";
+import NoteView from "./components/NoteView";
+import CreateNote from "./components/CreateNote";
+import Edit from "./components/Edit";
 
 class App extends Component {
   constructor(props) {
