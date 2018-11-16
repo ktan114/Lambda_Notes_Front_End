@@ -79,7 +79,7 @@ class Edit extends Component {
           /> */}
             <Link
               to={{
-                pathname: `/noteview/${this.state.id}`,
+                pathname: `/note/${this.state.id}`,
                 state: {
                   note: {
                     title: this.state.title,

@@ -20,7 +20,7 @@ class ListView extends Component {
                   key={note._id}
                   className="List__note__link"
                   to={{
-                    pathname: `/noteView/${note._id}`,
+                    pathname: `/note/${note._id}`,
                     state: { note: note }
                   }}
                 >

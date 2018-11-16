@@ -39,7 +39,7 @@ class App extends Component {
           path="/"
           render={props => <ListView {...props} notes={this.state.notes} />}
         />
-        <Route path="/noteview/:id" component={NoteView} />
+        <Route path="/note/:id" component={NoteView} />
         <Route path="/createnote" component={CreateNote} />
         <Route path="/edit/:id" component={Edit} />
         <Route path="/login" component={Login} />
