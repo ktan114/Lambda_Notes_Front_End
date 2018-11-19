@@ -7,6 +7,7 @@ import NoteView from "./components/NoteView";
 import CreateNote from "./components/CreateNote";
 import Edit from "./components/Edit";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class App extends Component {
         <Route path="/createnote" component={CreateNote} />
         <Route path="/edit/:id" component={Edit} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </div>
     );
   }
