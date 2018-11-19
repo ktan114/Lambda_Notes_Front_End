@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
 import axios from "axios";
+
+const url = require("../config/config");
 
 class Register extends Component {
   constructor(props) {
@@ -17,10 +18,9 @@ class Register extends Component {
   register = () => {
     const { username, password } = this.state;
     const userInfo = { username, password };
-    console.log("userInfo", userInfo)
 
     axios
-      .post("http://localhost:5000/users/register", userInfo)
+      .post(`${url[url.basePath]}/users/register`, userInfo)
       .then(response => {
         console.log(response); // token, user info
       })

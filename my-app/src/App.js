@@ -8,6 +8,7 @@ import CreateNote from "./components/CreateNote";
 import Edit from "./components/Edit";
 import Login from "./components/Login";
 import Register from "./components/Register";
+const url = require("./config/config");
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class App extends Component {
 
   retrieveNotes() {
     axios
-      .get(`https://ktan-notes.herokuapp.com/notes`)
+      .get(`${url[url.basePath]}/notes`)
       .then(res => {
         this.setState({ notes: res.data });
       })

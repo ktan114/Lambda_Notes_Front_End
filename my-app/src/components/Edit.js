@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import Sidebar from "../subcomponents/Sidebar";
+const url = require("../config/config");
 
 class Edit extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Edit extends Component {
 
   retrieveNote(note_id) {
     axios
-      .get(`https://ktan-notes.herokuapp.com/notes/${note_id}`)
+      .get(`${url[url.basePath]}/notes/${note_id}`)
       .then(res => {
         this.setState({ title: res.data.title, body: res.data.body });
       })
@@ -37,7 +38,7 @@ class Edit extends Component {
     const updatedObj = { title: this.state.title, body: this.state.body };
     axios
       .put(
-        `https://ktan-notes.herokuapp.com/notes/${this.state.id}`,
+        `${url[url.basePath]}/notes/${this.state.id}`,
         updatedObj
       )
       .then(() => {})

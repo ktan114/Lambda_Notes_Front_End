@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Sidebar from "../subcomponents/Sidebar";
 import Modal from "../subcomponents/Modal";
+const url = require("../config/config");
 
 class NoteView extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class NoteView extends Component {
 
   retrieveNote(note_id) {
     axios
-      .get(`https://ktan-notes.herokuapp.com/notes/${note_id}`)
+      .get(`${url[url.basePath]}/notes/${note_id}`)
       .then(res => {
         this.setState({ note: res.data });
       })

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
+const url = require("../config/config");
 
 class Login extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Login extends Component {
     const userInfo = { username, password };
 
     axios
-      .post("http://localhost:5000/users/login", userInfo)
+      .post(`${url[url.basePath]}/users/login`, userInfo)
       .then(response => {
         console.log(response); // token, user info
       })

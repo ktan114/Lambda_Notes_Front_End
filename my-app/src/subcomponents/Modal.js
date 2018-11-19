@@ -2,12 +2,14 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const url = require("../config/config");
+
 const Modal = ({ handleClose, show, id }) => {
   const showHideClassName = show ? "Modal display-block" : "Modal display-none";
 
   const handleDelete = () => {
     axios
-      .delete(`https://ktan-notes.herokuapp.com/notes/${id}`)
+      .delete(`${url[url.basePath]}/notes/${id}`)
       .then(() => {})
       .catch(err => console.log(err));
   };

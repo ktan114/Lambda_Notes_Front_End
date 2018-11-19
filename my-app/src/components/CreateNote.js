@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import Sidebar from "../subcomponents/Sidebar";
+const url = require("../config/config");
 
 class NewNote extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class NewNote extends Component {
   handleSubmit = () => {
     const updatedObj = this.state;
     axios
-      .post(`https://ktan-notes.herokuapp.com/notes`, updatedObj)
+      .post(`${url[url.basePath]}/notes`, updatedObj)
       .then(res => {
       })
       .catch(err => {
