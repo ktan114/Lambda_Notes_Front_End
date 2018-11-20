@@ -27,6 +27,7 @@ class Login extends Component {
       .then(response => {
         if (response.data.token) {
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("id", response.data.user._id);
           this.props.history.push({
             pathname: "/",
             state: { user: response.data }
