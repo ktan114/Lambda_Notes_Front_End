@@ -14,8 +14,6 @@ class Register extends Component {
     };
   }
 
-  // Axios request to login, do a POST to /login
-  // Receive token, user info
   register = () => {
     const { username, password } = this.state;
     const userInfo = { username, password };
@@ -23,7 +21,7 @@ class Register extends Component {
     axios
       .post(`${url[url.basePath]}/users/register`, userInfo)
       .then(response => {
-        console.log(response); // token, user info
+        console.log(response);
       })
       .catch(err => console.log(err));
   };
@@ -61,9 +59,8 @@ class Register extends Component {
           />
         </form>
         <div>
-          <button onClick={this.register}>Register</button>
           <Link to="/login">
-            <button>Back to Login Page</button>
+            <button onClick={this.register}>Register</button>
           </Link>
         </div>
       </div>
