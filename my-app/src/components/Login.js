@@ -28,10 +28,7 @@ class Login extends Component {
         if (response.data.token) {
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("id", response.data.user._id);
-          this.props.history.push({
-            pathname: "/",
-            state: { user: response.data }
-          });
+          this.props.history.push("/");
         }
       })
       .catch(err => console.log(err));

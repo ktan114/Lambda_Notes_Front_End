@@ -9,8 +9,7 @@ class ListView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [],
-     
+      notes: []
     };
   }
 
@@ -24,7 +23,6 @@ class ListView extends Component {
     const requestOptions = {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") }
     };
-    console.log("requestOptions", requestOptions);
     axios
       .get(`${url[url.basePath]}/notes`, requestOptions)
       .then(res => {
