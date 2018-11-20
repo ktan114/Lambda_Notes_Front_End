@@ -9,19 +9,29 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: "",
-      success: false
+      password: ""
     };
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    if (localStorage.getItem("token")) this.props.history.push("/");
   }
 
   login = () => {
     const { username, password } = this.state;
-    const userInfo = { username, password };
+    const loginInfo = { username, password };
 
     axios
-      .post(`${url[url.basePath]}/users/login`, userInfo)
+      .post(`${url[url.basePath]}/users/login`, loginInfo)
       .then(response => {
-        console.log(response); // token, user info
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+          this.props.history.push({
+            pathname: "/",
+            state: { user: response.data }
+          });
+        }
       })
       .catch(err => console.log(err));
   };
@@ -32,7 +42,7 @@ class Login extends Component {
   };
 
   render() {
-    const stylePage= {
+    const stylePage = {
       display: "flex",
       flexFlow: "column ",
       justifyContent: "center",
