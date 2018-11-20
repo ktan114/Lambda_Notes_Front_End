@@ -6,12 +6,12 @@ import Sidebar from "../subcomponents/Sidebar";
 const url = require("../config/config");
 
 class NewNote extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       body: "",
-      createdBy: ""
+      createdBy: localStorage.getItem("id")
     };
   }
 
