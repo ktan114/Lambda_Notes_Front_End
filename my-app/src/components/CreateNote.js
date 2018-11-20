@@ -10,8 +10,8 @@ class NewNote extends Component {
     super();
     this.state = {
       title: "",
-      body: ""
-      // createdBy: ""
+      body: "",
+      createdBy: ""
     };
   }
 
@@ -53,14 +53,6 @@ class NewNote extends Component {
               value={this.state.body}
               onChange={this.handleChange}
             />
-            {/* <input
-              className="Note-title"
-              type="text"
-              placeholder="Note Created By"
-              name="createdBy"
-              value={this.state.createdBy}
-              onChange={this.handleChange}
-            /> */}
             <Link to="/">
               <button onClick={this.handleSubmit} className="Note__button Note__button--mod">
                 Save
