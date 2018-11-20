@@ -1,20 +1,44 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Sidebar from "../subcomponents/Sidebar";
+const url = require("../config/config");
 
 class ListView extends Component {
-  // componentDidMount() {
-  //   this.props.history.push("/login");
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: []
+    };
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem("token") === null)
+      this.props.history.push("/login");
+    this.retrieveNotes();
+  }
+
+  retrieveNotes = () => {
+    axios
+      .get(`${url[url.basePath]}/notes`)
+      .then(res => {
+        this.setState({ notes: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
+    console.log("props", this.props.location.state.user);
     return (
       <div className="Note">
         <Sidebar />
         <div className="Note__Page">
           <h1 className="Note__title"> Your Notes: </h1>
           <div className="List__notes">
-            {this.props.notes.map(note => {
+            {this.state.notes.map(note => {
               return (
                 <Link
                   key={note._id}
