@@ -32,8 +32,16 @@ class Login extends Component {
   };
 
   render() {
+    const stylePage= {
+      display: "flex",
+      flexFlow: "column ",
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: "300px"
+    };
+
     return (
-      <div>
+      <div style={stylePage}>
         <h1>Login Page</h1>
         <form>
           <input
@@ -51,10 +59,12 @@ class Login extends Component {
             onChange={this.handleInput}
           />
         </form>
-        <button onClick={this.login}>Login</button>
-        <Link to="/register">
-          <button>Register</button>
-        </Link>
+        <div>
+          <button onClick={this.login}>Login</button>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
+        </div>
       </div>
     );
   }

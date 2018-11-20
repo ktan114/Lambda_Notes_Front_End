@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const url = require("../config/config");
 
@@ -33,8 +34,15 @@ class Register extends Component {
   };
 
   render() {
+    const stylePage = {
+      display: "flex",
+      flexFlow: "column ",
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: "300px"
+    };
     return (
-      <div>
+      <div style={stylePage}>
         <h1>Registration Page</h1>
         <form>
           <input
@@ -52,7 +60,12 @@ class Register extends Component {
             onChange={this.handleInput}
           />
         </form>
-        <button onClick={this.register}>Register</button>
+        <div>
+          <button onClick={this.register}>Register</button>
+          <Link to="/login">
+            <button>Back to Login Page</button>
+          </Link>
+        </div>
       </div>
     );
   }
