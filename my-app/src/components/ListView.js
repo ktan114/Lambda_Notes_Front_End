@@ -9,7 +9,8 @@ class ListView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: []
+      notes: [],
+     
     };
   }
 
@@ -20,8 +21,12 @@ class ListView extends Component {
   }
 
   retrieveNotes = () => {
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
+    console.log("requestOptions", requestOptions);
     axios
-      .get(`${url[url.basePath]}/notes`)
+      .get(`${url[url.basePath]}/notes`, requestOptions)
       .then(res => {
         this.setState({ notes: res.data });
       })
@@ -31,7 +36,7 @@ class ListView extends Component {
   };
 
   render() {
-    console.log("props", this.props.location.state.user);
+    // console.log("props", this.props.location.state.user);
     return (
       <div className="Note">
         <Sidebar />
