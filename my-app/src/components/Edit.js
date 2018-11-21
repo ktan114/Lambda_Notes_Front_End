@@ -11,7 +11,8 @@ class Edit extends Component {
     this.state = {
       id: props.match.params.id,
       title: "",
-      body: ""
+      body: "",
+      isLoaded: false
     };
   }
 
@@ -19,16 +20,23 @@ class Edit extends Component {
     this.retrieveNote(this.state.id);
   }
 
-  retrieveNote(note_id) {
+  retrieveNote = note_id => {
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
     axios
-      .get(`${url[url.basePath]}/notes/${note_id}`)
+      .get(`${url[url.basePath]}/notes/${note_id}`, requestOptions)
       .then(res => {
-        this.setState({ title: res.data.title, body: res.data.body });
+        this.setState({
+          title: res.data.title,
+          body: res.data.body,
+          isLoaded: true
+        });
       })
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -36,10 +44,14 @@ class Edit extends Component {
 
   handleSubmit = e => {
     const updatedObj = { title: this.state.title, body: this.state.body };
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
     axios
       .put(
         `${url[url.basePath]}/notes/${this.state.id}`,
-        updatedObj
+        updatedObj,
+        requestOptions
       )
       .then(() => {})
       .catch(err => {
@@ -53,51 +65,53 @@ class Edit extends Component {
         <Sidebar />
         <div className="Note__Page">
           <h1 className="Note__title"> Edit Note: </h1>
-          <div className="Create">
-            <input
-              className="Create__title"
-              type="text"
-              placeholder="Title"
-              name="title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-            <textarea
-              className="Create-content"
-              type="text"
-              placeholder="Type your note"
-              name="body"
-              value={this.state.body}
-              onChange={this.handleChange}
-            />
-            {/* <input
-            className="Note-title"
-            type="text"
-            placeholder="Note Created By"
-            name="createdBy"
-            value={this.state.createdBy}
-            onChange={this.handleChange}
-          /> */}
-            <Link
-              to={{
-                pathname: `/note/${this.state.id}`,
-                state: {
-                  note: {
-                    title: this.state.title,
-                    body: this.state.body,
-                    _id: this.state.id
-                  }
-                }
-              }}
-            >
-              <button
-                onClick={this.handleSubmit}
-                className="Note__button Note__button--mod"
+          {this.state.isLoaded ? (
+            <div className="Create">
+              <input
+                className="Create__title"
+                type="text"
+                placeholder="Title"
+                name="title"
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+              <textarea
+                className="Create-content"
+                type="text"
+                placeholder="Type your note"
+                name="body"
+                value={this.state.body}
+                onChange={this.handleChange}
+              />
+              <Link
+                to={{
+                  pathname: `/note/${this.state.id}`,
+                  state: { id: this.state.id }
+                }}
               >
-                Update
-              </button>
-            </Link>
-          </div>
+                <button
+                  onClick={this.handleSubmit}
+                  className="Note__button Note__button--mod"
+                >
+                  Update
+                </button>
+              </Link>
+              <Link
+                to={{
+                  pathname: `/note/${this.state.id}`,
+                  state: { id: this.state.id }
+                }}
+              >
+                <button className="Note__button Note__button--mod">
+                  Cancel
+                </button>
+              </Link>
+            </div>
+          ) : (
+            <div className="NoteView__content">
+              <h1>Loading...</h1>
+            </div>
+          )}
         </div>
       </div>
     );

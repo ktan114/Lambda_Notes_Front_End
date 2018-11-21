@@ -15,25 +15,32 @@ class NoteView extends Component {
         title: "",
         body: ""
       },
-      show: false
+      show: false,
+      isLoaded: false
     };
   }
 
   componentDidMount() {
     const { id } = this.state;
     this.retrieveNote(id);
+    if (!this.state.note.title) {
+      this.retrieveNote(id);
+    }
   }
 
-  retrieveNote(note_id) {
+  retrieveNote = note_id => {
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
     axios
-      .get(`${url[url.basePath]}/notes/${note_id}`)
+      .get(`${url[url.basePath]}/notes/${note_id}`, requestOptions)
       .then(res => {
-        this.setState({ note: res.data });
+        this.setState(() => ({ note: res.data, isLoaded: true }));
       })
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
   openModal = () => {
     this.setState({ show: true });
@@ -50,20 +57,33 @@ class NoteView extends Component {
         <Sidebar />
         <div className="Note__Page">
           <div className="NoteView__links">
-            <Link className="NoteView__link NoteView__link--marginTop" to={`/edit/${this.state.id}`}>
+            <Link
+              className="NoteView__link NoteView__link--marginTop"
+              to={`/edit/${this.state.id}`}
+            >
               {" "}
               edit{" "}
             </Link>
-            <Modal show={this.state.show} handleClose={this.closeModal} id={this.state.id}/>
+            <Modal
+              show={this.state.show}
+              handleClose={this.closeModal}
+              id={this.state.id}
+            />
             <button className="NoteView__link" onClick={this.openModal}>
               {" "}
               delete{" "}
             </button>
           </div>
-          <div className="NoteView__content">
-            <h1 className="Note__title Note__title--mod"> {note.title} </h1>
-            <p className="NoteView__p"> {note.body} </p>
-          </div>
+          {this.state.isLoaded ? (
+            <div className="NoteView__content">
+              <h1 className="Note__title Note__title--mod"> {note.title} </h1>
+              <p className="NoteView__p"> {note.body} </p>
+            </div>
+          ) : (
+            <div className="NoteView__content">
+              <h1>Loading...</h1>
+            </div>
+          )}
         </div>
       </div>
     );
