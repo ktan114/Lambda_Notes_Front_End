@@ -105,15 +105,22 @@ html {
   padding-right: 100%;
 }
 
-.Sidebar__links {
-  background: white;
+.Sidebar__Buttons {
+  display: flex;
+  flex-flow: column;
+  height: 650px;
+}
+
+.Sidebar__link {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+  color: white;
 }
 
 .Note__button--red {
   background: red;
+  margin-top: auto;
 }
 
 /* Component Styling */
