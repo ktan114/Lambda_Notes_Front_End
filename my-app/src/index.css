@@ -28,6 +28,10 @@ html {
   font-size: 2.5rem;
 }
 
+.Note__buttons {
+  display: flex;
+}
+
 .Note__button {
   border: 1px solid darkgrey;
   color: white;
@@ -126,6 +130,7 @@ html {
 /* Component Styling */
 .Create {
   margin: 18px 0 18px 6%;
+  width: 100%;
 }
 
 .Create__title {
@@ -143,12 +148,16 @@ html {
   font-size: 1.5rem;
 }
 
+.Note__link {
+  width: 90%;
+}
+
 .Note__button--mod {
   color: white;
   font-weight: bold;
   margin-top: 10px;
-  width: 60%;
   font-size: 1.5rem;
+  width: 80%;
 }
 
 .List__notes {

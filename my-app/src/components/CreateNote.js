@@ -55,17 +55,21 @@ class NewNote extends Component {
               value={this.state.body}
               onChange={this.handleChange}
             />
-            <Link to={{ pathname: "/", state: { note: "" } }}>
-              <button
-                onClick={this.handleCreate}
-                className="Note__button Note__button--mod"
-              >
-                Save
-              </button>
-            </Link>
-            <Link to={{ pathname: "/", state: { note: "" } }}>
-              <button className="Note__button Note__button--mod">Cancel</button>
-            </Link>
+            <div className="Note__buttons">
+              <Link className="Note__link" to={{ pathname: "/", state: { note: "" } }}>
+                <button
+                  onClick={this.handleCreate}
+                  className="Note__button Note__button--mod"
+                >
+                  Save
+                </button>
+              </Link>
+              <Link className="Note__link" to={{ pathname: "/", state: { note: "" } }}>
+                <button className="Note__button Note__button--mod Note__button--red">
+                  Cancel
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

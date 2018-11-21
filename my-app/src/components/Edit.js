@@ -83,29 +83,33 @@ class Edit extends Component {
                 value={this.state.body}
                 onChange={this.handleChange}
               />
-              <Link
-                to={{
-                  pathname: `/note/${this.state.id}`,
-                  state: { id: this.state.id }
-                }}
-              >
-                <button
-                  onClick={this.handleEdit}
-                  className="Note__button Note__button--mod"
+              <div className="Note__buttons">
+                <Link
+                  className="Note__link"
+                  to={{
+                    pathname: `/note/${this.state.id}`,
+                    state: { id: this.state.id }
+                  }}
                 >
-                  Update
-                </button>
-              </Link>
-              <Link
-                to={{
-                  pathname: `/note/${this.state.id}`,
-                  state: { id: this.state.id }
-                }}
-              >
-                <button className="Note__button Note__button--mod">
-                  Cancel
-                </button>
-              </Link>
+                  <button
+                    onClick={this.handleEdit}
+                    className="Note__button Note__button--mod"
+                  >
+                    Update
+                  </button>
+                </Link>
+                <Link
+                  className="Note__link"
+                  to={{
+                    pathname: `/note/${this.state.id}`,
+                    state: { id: this.state.id }
+                  }}
+                >
+                  <button className="Note__button Note__button--mod Note__button--red">
+                    Cancel
+                  </button>
+                </Link>
+              </div>
             </div>
           ) : (
             <div className="NoteView__content">

@@ -22,6 +22,9 @@ html {
   margin: 48px 0 0 6%;
   font-size: 2.5rem;
 }
+.Note__buttons {
+  display: flex;
+}
 .Note__button {
   border: 1px solid darkgrey;
   color: white;

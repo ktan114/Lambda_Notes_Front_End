@@ -1,5 +1,6 @@
 .Create {
   margin: 18px 0 18px 6%;
+  width: 100%;
 }
 .Create__title {
   width: 70%;
@@ -14,10 +15,13 @@
   padding: 10px 5%;
   font-size: 1.5rem;
 }
+.Note__link {
+  width: 90%;
+}
 .Note__button--mod {
   color: white;
   font-weight: bold;
   margin-top: 10px;
-  width: 60%;
   font-size: 1.5rem;
+  width: 80%;
 }
