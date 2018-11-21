@@ -21,7 +21,7 @@ const Sidebar = () => {
           + Create New Note{" "}
         </Link>
       </button>
-      <button onClick={logOut} className="Note__button">
+      <button onClick={logOut} className="Note__button Note__button--red">
         <Link className="Sidebar__links" to="/login">
           Logout
         </Link>

@@ -1,5 +1,6 @@
 /* General Styling */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -29,6 +30,7 @@ body, html {
 
 .Note__button {
   border: 1px solid darkgrey;
+  color: white;
   background: #10b7bd;
   text-align: center;
   width: 90%;
@@ -103,20 +105,15 @@ body, html {
   padding-right: 100%;
 }
 
-.Sidebar__buttons {
-  border: 1px solid darkgrey;
-  background: #10b7bd;
-  text-align: center;
-  width: 90%;
-  padding: 10px 5% 10px 5%;
-  margin-top: 25px;
-}
-
 .Sidebar__links {
-  color: white;
+  background: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.Note__button--red {
+  background: red;
 }
 
 /* Component Styling */

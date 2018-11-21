@@ -9,17 +9,12 @@
   font-size: 2.5rem;
   padding-right: 100%;
 }
-.Sidebar__buttons {
-  border: 1px solid darkgrey;
-  background: $note-button;
-  text-align: center;
-  width: 90%;
-  padding: 10px 5% 10px 5%;
-  margin-top: 25px;
-}
 .Sidebar__links {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+}
+.Note__button--red {
+  background: red;
 }
