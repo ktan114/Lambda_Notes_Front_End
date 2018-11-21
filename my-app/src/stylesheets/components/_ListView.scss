@@ -7,6 +7,9 @@
   width: 100%;
   text-decoration: none;
   color: black;
+  @media only screen and (min-width: 992px) {
+    width: 33%;
+  }
 }
 .List__note {
   background: white;
@@ -15,6 +18,7 @@
   padding: 10px 5% 10px 5%;
   margin-top: 8px;
   overflow-wrap: break-word;
+
 }
 .List__note__h3 {
   margin: 0 auto;

@@ -171,6 +171,11 @@ html {
   text-decoration: none;
   color: black;
 }
+@media only screen and (min-width: 992px) {
+  .List__note__link {
+    width: 33%;
+  }
+}
 
 .List__note {
   background: white;
