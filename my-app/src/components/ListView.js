@@ -34,7 +34,6 @@ class ListView extends Component {
   };
 
   render() {
-    // console.log("props", this.props.location.state.user);
     return (
       <div className="Note">
         <Sidebar />

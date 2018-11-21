@@ -21,10 +21,12 @@ class NewNote extends Component {
 
   handleSubmit = () => {
     const updatedObj = this.state;
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
     axios
-      .post(`${url[url.basePath]}/notes`, updatedObj)
-      .then(res => {
-      })
+      .post(`${url[url.basePath]}/notes`, updatedObj, requestOptions)
+      .then(res => {})
       .catch(err => {
         console.log(err);
       });
@@ -53,10 +55,16 @@ class NewNote extends Component {
               value={this.state.body}
               onChange={this.handleChange}
             />
-            <Link to="/">
-              <button onClick={this.handleSubmit} className="Note__button Note__button--mod">
+            <Link to={{ pathname: "/", state: { note: "" } }}>
+              <button
+                onClick={this.handleSubmit}
+                className="Note__button Note__button--mod"
+              >
                 Save
               </button>
+            </Link>
+            <Link to={{ pathname: "/", state: { note: "" } }}>
+              <button className="Note__button Note__button--mod">Cancel</button>
             </Link>
           </div>
         </div>

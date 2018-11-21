@@ -20,9 +20,7 @@ class Register extends Component {
 
     axios
       .post(`${url[url.basePath]}/users/register`, userInfo)
-      .then(response => {
-        console.log(response);
-      })
+      .then(() => {})
       .catch(err => console.log(err));
   };
 
