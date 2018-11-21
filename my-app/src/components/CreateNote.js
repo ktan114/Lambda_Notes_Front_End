@@ -19,13 +19,13 @@ class NewNote extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = () => {
-    const updatedObj = this.state;
+  handleCreate = () => {
+    const createdNote = this.state;
     const requestOptions = {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") }
     };
     axios
-      .post(`${url[url.basePath]}/notes`, updatedObj, requestOptions)
+      .post(`${url[url.basePath]}/notes`, createdNote, requestOptions)
       .then(res => {})
       .catch(err => {
         console.log(err);
@@ -57,7 +57,7 @@ class NewNote extends Component {
             />
             <Link to={{ pathname: "/", state: { note: "" } }}>
               <button
-                onClick={this.handleSubmit}
+                onClick={this.handleCreate}
                 className="Note__button Note__button--mod"
               >
                 Save

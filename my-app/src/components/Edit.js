@@ -42,7 +42,7 @@ class Edit extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleEdit = () => {
     const updatedObj = { title: this.state.title, body: this.state.body };
     const requestOptions = {
       headers: { Authorization: "Bearer " + localStorage.getItem("token") }
@@ -90,7 +90,7 @@ class Edit extends Component {
                 }}
               >
                 <button
-                  onClick={this.handleSubmit}
+                  onClick={this.handleEdit}
                   className="Note__button Note__button--mod"
                 >
                   Update
