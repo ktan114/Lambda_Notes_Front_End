@@ -20,7 +20,9 @@ class Register extends Component {
 
     axios
       .post(`${url[url.basePath]}/users/register`, userInfo)
-      .then(() => {})
+      .then(() => {
+        this.props.history.push("/login");
+      })
       .catch(err => console.log(err));
   };
 
@@ -30,36 +32,36 @@ class Register extends Component {
   };
 
   render() {
-    const stylePage = {
-      display: "flex",
-      flexFlow: "column ",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: "300px"
-    };
     return (
-      <div style={stylePage}>
-        <h1>Registration Page</h1>
-        <form>
-          <input
-            name="username"
-            type="text"
-            placeholder="Enter your username"
-            value={this.state.username}
-            onChange={this.handleInput}
-          />
-          <input
-            name="password"
-            type="text"
-            placeholder="Enter your password"
-            value={this.state.password}
-            onChange={this.handleInput}
-          />
-        </form>
-        <div>
-          <Link to="/login">
-            <button onClick={this.register}>Register</button>
-          </Link>
+      <div className="LandingPage">
+        <div className="Landing__Page">
+          <h1 className="LandingPage__h1">Registration Page</h1>
+          <form className="LandingPage__Form">
+            <input
+              name="username"
+              type="text"
+              placeholder="Enter your username"
+              className="LandingPage__Input"
+              value={this.state.username}
+              onChange={this.handleInput}
+            />
+            <input
+              name="password"
+              type="text"
+              placeholder="Enter your password"
+              className="LandingPage__Input"
+              value={this.state.password}
+              onChange={this.handleInput}
+            />
+          </form>
+          <div className="LandingPage__Buttons">
+            <button className="LandingPage__Button" onClick={this.register}>Register</button>
+            <Link className="LandingPage__Link" to="/login">
+              <button className="LandingPage__Return">
+              Go Back
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );

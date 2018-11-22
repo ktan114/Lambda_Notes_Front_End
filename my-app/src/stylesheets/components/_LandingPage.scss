@@ -1,0 +1,50 @@
+.LandingPage {
+  background: $page-background;
+  min-height: 100vh;
+}
+.Landing__Page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
+.LandingPage__Title, .LandingPage__h1 {
+  font-size: 4.5rem;
+  margin-bottom: 50px;
+}
+.LandingPage__Form {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.LandingPage__Input {
+  height: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+  border: 3px solid black;
+}
+.LandingPage__Buttons {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
+}
+.LandingPage__Button {
+  margin-top: 10px;
+  width: 80%;
+  background: $note-button;
+  font-size: 2rem;
+}
+.LandingPage__Link {
+  width: 40%;
+  margin-top: 20px;
+}
+.LandingPage__Return {
+  width: 100%;
+  background: red;
+  color: white;
+  font-size: 2rem;
+}

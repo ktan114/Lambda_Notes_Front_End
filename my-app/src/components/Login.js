@@ -40,38 +40,36 @@ class Login extends Component {
   };
 
   render() {
-    const stylePage = {
-      display: "flex",
-      flexFlow: "column ",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: "300px"
-    };
-
     return (
-      <div style={stylePage}>
-        <h1>Login Page</h1>
-        <form>
-          <input
-            name="username"
-            type="text"
-            placeholder="Enter your username"
-            value={this.state.username}
-            onChange={this.handleInput}
-          />
-          <input
-            name="password"
-            type="text"
-            placeholder="Enter your password"
-            value={this.state.password}
-            onChange={this.handleInput}
-          />
-        </form>
-        <div>
-          <button onClick={this.login}>Login</button>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
+      <div className="LandingPage">
+        <div className="Landing__Page">
+          <h1 className="LandingPage__Title">Lambda Notes</h1>
+          <form className="LandingPage__Form">
+            <input
+              name="username"
+              type="text"
+              placeholder="Enter your username"
+              className="LandingPage__Input"
+              value={this.state.username}
+              onChange={this.handleInput}
+            />
+            <input
+              name="password"
+              type="text"
+              placeholder="Enter your password"
+              className="LandingPage__Input"
+              value={this.state.password}
+              onChange={this.handleInput}
+            />
+          </form>
+          <div className="LandingPage__Buttons">
+            <button className="LandingPage__Button" onClick={this.login}>
+              Login
+            </button>
+            <Link className="LandingPage__Link" to="/register">
+              <button className="LandingPage__Return">Register</button>
+            </Link>
+          </div>
         </div>
       </div>
     );
