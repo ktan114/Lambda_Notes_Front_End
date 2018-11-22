@@ -2,5 +2,5 @@
     base="my-app/"
     publish="my-app/build"
 [[redirects]]
-    from="/*"
+    from="/login"
     to="/"
