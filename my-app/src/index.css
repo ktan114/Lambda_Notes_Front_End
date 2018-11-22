@@ -246,7 +246,8 @@ html {
   width: 100%;
 }
 
-.LandingPage__Title, .LandingPage__h1 {
+.LandingPage__Title,
+.LandingPage__h1 {
   font-size: 4.5rem;
   margin-bottom: 50px;
 }
@@ -257,12 +258,24 @@ html {
   justify-content: space-around;
   margin-bottom: 40px;
 }
+@media only screen and (min-width: 992px) {
+  .LandingPage__Form {
+    width: 60%;
+  }
+}
 
 .LandingPage__Input {
   height: 40px;
   padding-left: 2%;
   padding-right: 2%;
   border: 3px solid black;
+}
+@media only screen and (min-width: 992px) {
+  .LandingPage__Input {
+    width: 60%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
 }
 
 .LandingPage__Buttons {
@@ -271,6 +284,13 @@ html {
   flex-flow: column;
   align-items: center;
 }
+@media only screen and (min-width: 992px) {
+  .LandingPage__Buttons {
+    width: 70%;
+    flex-flow: row;
+    margin-top: 20px;
+  }
+}
 
 .LandingPage__Button {
   margin-top: 10px;
@@ -278,10 +298,22 @@ html {
   background: #10b7bd;
   font-size: 2rem;
 }
+@media only screen and (min-width: 992px) {
+  .LandingPage__Button {
+    width: 30%;
+    margin: 0 2% 0 18%;
+  }
+}
 
 .LandingPage__Link {
   width: 40%;
   margin-top: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .LandingPage__Link {
+    margin-top: 0;
+    width: 30%;
+  }
 }
 
 .LandingPage__Return {
@@ -289,6 +321,11 @@ html {
   background: red;
   color: white;
   font-size: 2rem;
+}
+@media only screen and (min-width: 992px) {
+  .LandingPage__Return {
+    margin-left: 5%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
