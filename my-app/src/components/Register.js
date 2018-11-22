@@ -10,7 +10,7 @@ class Register extends Component {
     this.state = {
       username: "",
       password: "",
-      success: false
+      failed: false
     };
   }
 
@@ -27,7 +27,7 @@ class Register extends Component {
       .then(() => {
         this.props.history.push("/login");
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ failed: true }));
   };
 
   handleInput = e => {
@@ -51,13 +51,15 @@ class Register extends Component {
             />
             <input
               name="password"
-              type="text"
+              type="password"
               placeholder="Enter your password"
               className="LandingPage__Input"
               value={this.state.password}
               onChange={this.handleInput}
             />
           </form>
+          <h1 className="LandingPage__FormText">Case sensitive information</h1>
+          {this.state.failed ? <h1>Unable to register</h1> : null}
           <div className="LandingPage__Buttons">
             <button className="LandingPage__Button" onClick={this.register}>
               Register

@@ -63,7 +63,7 @@ class Login extends Component {
               onChange={this.handleInput}
             />
           </form>
-          <h1 className="LandingPage__FormText">Case sensitive login information</h1>
+          <h1 className="LandingPage__FormText">Case sensitive information</h1>
           {this.state.invalid ? <h1>Incorrect username or password</h1> : null}
           <div className="LandingPage__Buttons">
             <button className="LandingPage__Button" onClick={this.login}>
