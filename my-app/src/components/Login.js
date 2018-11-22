@@ -9,7 +9,8 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      invalid: false
     };
   }
 
@@ -31,7 +32,7 @@ class Login extends Component {
           this.props.history.push("/");
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ invalid: true }));
   };
 
   handleInput = e => {
@@ -62,6 +63,7 @@ class Login extends Component {
               onChange={this.handleInput}
             />
           </form>
+          {this.state.invalid ? <h1>Incorrect username or password</h1> : null}
           <div className="LandingPage__Buttons">
             <button className="LandingPage__Button" onClick={this.login}>
               Login
