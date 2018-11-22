@@ -40,6 +40,7 @@ class Register extends Component {
       <div className="LandingPage">
         <div className="Landing__Page">
           <h1 className="LandingPage__h1">Registration Page</h1>
+          <h1 className="LandingPage__FormText">Case sensitive information</h1>
           <form className="LandingPage__Form">
             <input
               name="username"
@@ -58,7 +59,6 @@ class Register extends Component {
               onChange={this.handleInput}
             />
           </form>
-          <h1 className="LandingPage__FormText">Case sensitive information</h1>
           {this.state.failed ? <h1>Unable to register</h1> : null}
           <div className="LandingPage__Buttons">
             <button className="LandingPage__Button" onClick={this.register}>
