@@ -4,3 +4,21 @@
 [[redirects]]
     from="/login"
     to="/"
+
+[[redirects]]
+    from="/createnote"
+    to="/"
+
+[[redirects]]
+    from="/register"
+    to="/"
+
+[[redirects]]
+    from="/note/:id"
+    to="/"
+
+[[redirects]]
+    from="/edit/:id"
+    to="/"
+
+    
