@@ -259,11 +259,11 @@ html {
   width: 90%;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 40px;
 }
 @media only screen and (min-width: 992px) {
   .LandingPage__Form {
     width: 60%;
+    margin-bottom: 0;
   }
 }
 
@@ -279,6 +279,11 @@ html {
     margin-right: 5%;
     margin-left: 5%;
   }
+}
+
+.LandingPage__FormText {
+  margin-left: 3%;
+  width: 50%;
 }
 
 .LandingPage__Buttons {
