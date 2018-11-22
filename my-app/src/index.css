@@ -167,6 +167,8 @@ html {
   display: flex;
   flex-flow: row wrap;
   margin: 18px 0 18px 4%;
+  max-height: 610px;
+  overflow-y: auto;
 }
 
 .List__note__link {
