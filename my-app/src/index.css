@@ -285,6 +285,12 @@ html {
   margin-left: 3%;
   width: 100%;
 }
+@media only screen and (min-width: 992px) {
+  .LandingPage__FormText {
+    text-align: center;
+    margin-left: 0;
+  }
+}
 
 .LandingPage__Buttons {
   display: flex;
