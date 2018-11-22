@@ -33,6 +33,20 @@ class ListView extends Component {
       });
   };
 
+  copyNotes = copiedNote => {
+    const notes = this.state.notes;
+    notes.push(copiedNote);
+    const requestOptions = {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    };
+    axios
+      .post(`${url[url.basePath]}/notes`, copiedNote, requestOptions)
+      .then(success => {
+        this.setState({ notes: notes });
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="Note">
@@ -42,19 +56,31 @@ class ListView extends Component {
           <div className="List__notes">
             {this.state.notes.map(note => {
               return (
-                <Link
-                  key={note._id}
-                  className="List__note__link"
-                  to={{
-                    pathname: `/note/${note._id}`,
-                    state: { note: note }
-                  }}
-                >
-                  <div className="List__note">
-                    <h3 className="List__note__h3"> {note.title} </h3>
-                    <p className="List__note__p"> {note.body} </p>
-                  </div>
-                </Link>
+                <div key={note._id} className="List__note__link">
+                  <Link
+                    className="List__note__link"
+                    to={{
+                      pathname: `/note/${note._id}`,
+                      state: { note: note }
+                    }}
+                  >
+                    <div className="List__note">
+                      <h3 className="List__note__h3"> {note.title} </h3>
+                      <p className="List__note__p"> {note.body} </p>
+                    </div>
+                  </Link>
+                  <button
+                    onClick={() =>
+                      this.copyNotes({
+                        title: note.title,
+                        body: note.body,
+                        createdBy: localStorage.getItem("id")
+                      })
+                    }
+                  >
+                    Copy
+                  </button>
+                </div>
               );
             })}
           </div>
