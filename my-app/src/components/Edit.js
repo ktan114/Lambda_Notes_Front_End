@@ -17,6 +17,9 @@ class Edit extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    if (localStorage.getItem("token") === null)
+      this.props.history.push("/login");
     this.retrieveNote(this.state.id);
   }
 

@@ -21,6 +21,9 @@ class NoteView extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    if (localStorage.getItem("token") === null)
+      this.props.history.push("/login");
     const { id } = this.state;
     this.retrieveNote(id);
     if (!this.state.note.title) {

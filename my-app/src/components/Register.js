@@ -14,6 +14,10 @@ class Register extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   register = () => {
     const { username, password } = this.state;
     const userInfo = { username, password };
@@ -55,11 +59,11 @@ class Register extends Component {
             />
           </form>
           <div className="LandingPage__Buttons">
-            <button className="LandingPage__Button" onClick={this.register}>Register</button>
+            <button className="LandingPage__Button" onClick={this.register}>
+              Register
+            </button>
             <Link className="LandingPage__Link" to="/login">
-              <button className="LandingPage__Return">
-              Go Back
-              </button>
+              <button className="LandingPage__Return">Go Back</button>
             </Link>
           </div>
         </div>

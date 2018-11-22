@@ -15,6 +15,12 @@ class NewNote extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    if (localStorage.getItem("token") === null)
+      this.props.history.push("/login");
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -56,7 +62,10 @@ class NewNote extends Component {
               onChange={this.handleChange}
             />
             <div className="Note__buttons">
-              <Link className="Note__link" to={{ pathname: "/", state: { note: "" } }}>
+              <Link
+                className="Note__link"
+                to={{ pathname: "/", state: { note: "" } }}
+              >
                 <button
                   onClick={this.handleCreate}
                   className="Note__button Note__button--mod"
@@ -64,7 +73,10 @@ class NewNote extends Component {
                   Save
                 </button>
               </Link>
-              <Link className="Note__link" to={{ pathname: "/", state: { note: "" } }}>
+              <Link
+                className="Note__link"
+                to={{ pathname: "/", state: { note: "" } }}
+              >
                 <button className="Note__button Note__button--mod Note__button--red">
                   Cancel
                 </button>
