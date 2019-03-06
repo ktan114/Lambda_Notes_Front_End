@@ -7,10 +7,11 @@ const initialState = {
 function lambdaNotes(state = initialState, action) {
   switch (action.type) {
     case RETRIEVE_NOTES:
+        console.log(action.payload)
       return Object.assign({}, state, action.payload);
     default:
       return state;
   }
 }
 
-export default lambdaNotes
+export default lambdaNotes;

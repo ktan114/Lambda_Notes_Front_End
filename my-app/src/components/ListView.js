@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
 
 import Sidebar from "../subcomponents/Sidebar";
+import { retrieveNotes } from "../actions";
 const url = require("../config/config");
 
 class ListView extends Component {
@@ -16,22 +18,22 @@ class ListView extends Component {
   componentDidMount() {
     if (localStorage.getItem("token") === null)
       this.props.history.push("/login");
-    this.retrieveNotes();
+    this.props.retrieveNotes();
   }
 
-  retrieveNotes = () => {
-    const requestOptions = {
-      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
-    };
-    axios
-      .get(`${url[url.basePath]}/notes`, requestOptions)
-      .then(res => {
-        this.setState({ notes: res.data });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  // retrieveNotes = () => {
+  //   const requestOptions = {
+  //     headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+  //   };
+  //   axios
+  //     .get(`${url[url.basePath]}/notes`, requestOptions)
+  //     .then(res => {
+  //       this.setState({ notes: res.data });
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
 
   copyNotes = copiedNote => {
     const notes = this.state.notes;
@@ -90,4 +92,10 @@ class ListView extends Component {
   }
 }
 
-export default ListView;
+const mapStateToProps = state => {
+  return {
+    notes: state.notes
+  }
+}
+
+export default connect(mapStateToProps, { retrieveNotes })(ListView);
